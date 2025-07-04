@@ -37,7 +37,7 @@ The project uses a sheet named `Week Schedule` with the following layout:
 | J      | Saturday Activities                  |
 | K      | Sunday Activities                    |
 
- - Refer to this Schedule [Sample Schedule.png](Code/Sample Schedule.png)
+ - Refer to this Schedule [Sample Schedule]().
 ---
 
 ## ⚙️ Setup Instructions
