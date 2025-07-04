@@ -27,16 +27,21 @@ study-schedule-sync/
   
 ---
 
-## 🗓 Sheet Format: `Week Schedule`
+---
 
-| Column | Description                       |
-|--------|-----------------------------------|
-| A      | Start Time (24-hour format)       |
-| B      | End Time (24-hour format)         |
-| C–G    | Activities from Monday to Friday  |
-| J–K    | Activities for Saturday & Sunday  |
+## 📋 Google Sheet Format
 
-📝 Column `H` and `I` are **intentionally left blank** to visually separate weekdays and weekends.
+The project uses a sheet named **`Week Schedule`** with the following layout:
+
+| Column | Purpose                           |
+|--------|------------------------------------|
+| A      | Start Time (Mon–Fri) (24hr format) |
+| B      | End Time (Mon–Fri) (24hr format)   |
+| C–G    | Activities from Monday to Friday   |
+| H      | Start Time for Weekend             |
+| I      | End Time for Weekend               |
+| J      | Saturday Activities                |
+| K      | Sunday Activities                  |
 
 ---
 
@@ -88,15 +93,6 @@ A new sheet `Weekly Events` is auto-created to track:
 - Event status (Accepted / Declined / Tentative / Pending)
 - Response time
 - Event details (title, date, time, activity)
-
----
-
-## 📷 Screenshots (optional)
-
-> Add links to images like:
->
-> ![Week Schedule Sample](https://github.com/your-username/study-schedule-sync/assets/sample-sheet.png)
-> ![Synced Calendar Events](https://github.com/your-username/study-schedule-sync/assets/calendar-preview.png)
 
 ---
 
