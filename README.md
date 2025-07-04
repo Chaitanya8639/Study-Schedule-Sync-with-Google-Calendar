@@ -1,6 +1,6 @@
 # 📅 Study Schedule Sync with Google Calendar
 
-A **Google Apps Script** project that syncs your weekly study timetable from **Google Sheets** to **Google Calendar**. It automates event creation, tracks calendar responses, and updates schedules dynamically when the sheet is edited — so you can focus more on learning and less on planning.
+A **Google Apps Script** project that syncs your weekly study timetable from **Google Sheets** to **Google Calendar**. It automates event creation, tracks calendar responses, and updates schedules dynamically when the sheet is edited, so you can focus more on learning and less on planning.
 
 ---
 
@@ -130,14 +130,14 @@ A new sheet named `Weekly Events` is created to track attendance from calendar r
 Have ideas or feedback?
 
 - ⭐ Star this repo to support it
-- 🐛 [Open an issue](Issue)
+- 🐛 [Open an issue](Issues)
 - 🔧 Submit a pull request — all contributions are welcome!
 
 ---
 
 ## 📜 License
 
-This project is open-source under the [MIT License](LICENSE).
+This project is open-source under the [MIT License](Issues/LICENSE).
 
 ---
 
