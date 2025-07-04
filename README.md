@@ -1,110 +1,123 @@
 # 📅 Study Schedule Sync with Google Calendar
 
-A Google Apps Script project to sync your weekly study timetable from **Google Sheets** to **Google Calendar**. It automates event creation, tracks calendar responses, and updates schedules dynamically when the sheet is edited.
+A **Google Apps Script** project that syncs your weekly study timetable from **Google Sheets** to **Google Calendar**. It automates event creation, tracks calendar responses, and updates schedules dynamically when the sheet is edited — so you can focus more on learning and less on planning.
 
 ---
 
-## 📌 Features
+## ✨ Features
 
-- ✅ Create Google Calendar events for each activity block (Mon–Sun)
-- 🍱 Automatically skips **Lunch** blocks (case-insensitive)
-- 🔁 Recurring daily events for **Updates** and **Reflection / Journal**
-- ⏰ Adds **5-minute popup and email reminders**
-- 🗓 Attendance is tracked in a separate `Weekly Events` sheet
-- ✏️ Sheet + calendar auto-update when you edit **start/end times or activities**
-- 🔁 Scheduled auto-sync **every Monday at 8:00 AM**
-- 📬 Attendance responses are fetched daily **at 6:00 PM**
+- ✅ Automatically creates calendar events (Mon–Sun)
+- 🍱 Skips "Lunch" blocks (case-insensitive)
+- 🔁 Daily recurring events for **Updates** and **Reflection / Journal**
+- ⏰ Adds 5-minute **popup & email reminders**
+- 🗓 Tracks attendance in a `Weekly Events` sheet
+- ✏️ Auto-updates calendar when sheet start/end times or activities change
+- 📆 Weekly auto-sync every **Monday at 8:00 AM**
+- 📬 Fetches attendance responses daily at **6:00 PM**
 
 ---
 
 ## 📁 Folder Structure
 
 study-schedule-sync/
-- 📜 Code.gs → Main Google Apps Script code
-- 📜 appsscript.json → Project manifest for Google Apps Script
-- 📜 README.md → Project documentation (this file)
-
-  
----
+├── Code.gs # Main Google Apps Script code
+├── appsscript.json # Project manifest file
+└── README.md # Project documentation (this file)
 
 ---
 
 ## 📋 Google Sheet Format
 
-The project uses a sheet named **`Week Schedule`** with the following layout:
+The project uses a sheet named `Week Schedule` with the following layout:
 
-| Column | Purpose                           |
-|--------|------------------------------------|
-| A      | Start Time (Mon–Fri) (24hr format) |
-| B      | End Time (Mon–Fri) (24hr format)   |
-| C–G    | Activities from Monday to Friday   |
-| H      | Start Time for Weekend             |
-| I      | End Time for Weekend               |
-| J      | Saturday Activities                |
-| K      | Sunday Activities                  |
+| Column | Purpose                             |
+|--------|--------------------------------------|
+| A      | Start Time (Mon–Fri, 24hr format)    |
+| B      | End Time (Mon–Fri, 24hr format)      |
+| C–G    | Activities from Monday to Friday     |
+| H      | Start Time for Saturday & Sunday     |
+| I      | End Time for Saturday & Sunday       |
+| J      | Saturday Activities                  |
+| K      | Sunday Activities                    |
 
 ---
 
-## ✅ Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1. 📋 Create Your Schedule Sheet
+### 1. Create Your Schedule Sheet
 
-- Open Google Sheets
+- Open [Google Sheets](https://sheets.new)
 - Rename the first tab to: `Week Schedule`
-- Fill in your weekly timetable in the specified format
+- Fill in your weekly timetable using the format shown above
 
-### 2. 🧑‍💻 Add Apps Script Code
+### 2. Add the Script Code
 
 - Go to `Extensions → Apps Script`
-- Delete the default `Code.gs` content
-- Paste the contents of `Code.gs` from this repo
-- Go to `File → Project Settings` and name your script
+- Remove the default code in `Code.gs`
+- Paste in the contents from this repo’s `Code.gs`
+- Save and name your script via `File → Project Settings`
 
-### 3. 🔐 Authentication
+### 3. Authorize & Initialize
 
-- In the Apps Script editor, select the `setupScheduleSync()` function from the dropdown
-- Click ▶️ **Run** once to:
-  - Authorize Google Sheets and Calendar access
-  - Set up the `Schedule Sync` menu
-  - Create installable triggers
+- In the Apps Script editor, select the function `setupScheduleSync()` from the dropdown
+- Click ▶️ Run once to:
+  - Grant Calendar & Sheets permissions
+  - Create the custom `Schedule Sync` menu
+  - Install all required time-based and edit triggers
 
-### 4. 📆 Start Syncing
+### 4. Create Calendar Events
 
-- Go back to your sheet
-- Use the menu: `Schedule Sync > Create Calendar Events`
-- Done! Calendar events will appear under `Weekly Study Schedule`
-
----
-
-## ⏰ Auto Triggers (Set Up Automatically)
-
-| Task                   | Trigger Time     |
-|------------------------|------------------|
-| Create Weekly Events   | Every Monday 8:00 AM |
-| Update Attendance      | Every Day 6:00 PM    |
-| Update on Sheet Edit   | On any sheet edit (manual trigger)
+- Return to your sheet
+- Use the new menu: `Schedule Sync → Create Calendar Events`
+- Events will be created in a calendar titled: **Weekly Study Schedule**
 
 ---
 
-## 📋 Attendance Tracking
+## ⏰ Auto Triggers
 
-A new sheet `Weekly Events` is auto-created to track:
+| Task                   | Trigger Time          |
+|------------------------|-----------------------|
+| 🗓 Create Weekly Events   | Every Monday at 8:00 AM |
+| 📬 Update Attendance      | Every Day at 6:00 PM     |
+| ✏️ Update on Sheet Edit   | On every sheet edit      |
 
-- Event status (Accepted / Declined / Tentative / Pending)
-- Response time
-- Event details (title, date, time, activity)
-
----
-
-## 🔗 Useful Links
-
-- [📘 Google Apps Script Docs](https://developers.google.com/apps-script)
-- [📖 Calendar Service Reference](https://developers.google.com/apps-script/reference/calendar)
-- [📖 Spreadsheet Service Reference](https://developers.google.com/apps-script/reference/spreadsheet)
+> 📌 All triggers are auto-installed via the `setupScheduleSync()` function.
 
 ---
 
-## 🛠 Tech Stack
+## 🧾 Attendance Tracking
+
+A new sheet named `Weekly Events` is created to track attendance from calendar responses. It logs:
+
+| Column           | Description                            |
+|------------------|----------------------------------------|
+| Event Title      | Activity Title                         |
+| Date & Time      | Start and End Time                     |
+| Response Status  | Accepted / Declined / Tentative / None |
+| Response Time    | Timestamp of the calendar response     |
+
+---
+
+## 🧪 Development Tips
+
+- Use `Logger.log()` for debugging (`View > Logs`)
+- Run functions manually before relying on auto-triggers:
+  - `createWeeklyEvents()`
+  - `updateAttendanceFromCalendar()`
+- Ensure consistency in sheet formatting
+- Use installable triggers only (not `onEdit()` directly)
+
+---
+
+## 🔗 Useful Resources
+
+- 📘 [Google Apps Script Docs](https://developers.google.com/apps-script)
+- 📖 [Calendar Service Reference](https://developers.google.com/apps-script/reference/calendar)
+- 📖 [Spreadsheet Service Reference](https://developers.google.com/apps-script/reference/spreadsheet)
+
+---
+
+## 💻 Tech Stack
 
 - Google Apps Script (V8 Runtime)
 - Google Calendar API
@@ -112,32 +125,21 @@ A new sheet `Weekly Events` is auto-created to track:
 
 ---
 
-## 🧪 Local Development Tips
+## 🤝 Contributing
 
-- Use `Logger.log()` for debugging (`View > Logs`)
-- Test `createWeeklyEvents()` and `updateAttendanceFromCalendar()` manually before relying on triggers
-- Watch for sheet edits that update times or activities
+Have ideas or feedback?
 
----
-
-## 🤝 Contribution
-
-💡 Found a bug? Got a suggestion?
-
-Feel free to:
-
-- ⭐ Star this repo
-- 🐛 Open an issue
-- 📬 Submit a pull request
-
-Let's improve learning productivity, one calendar event at a time! 🧠📆
+- ⭐ Star this repo to support it
+- 🐛 [Open an issue](https://github.com/Chaitanya8639/study-schedule-sync/issues)
+- 🔧 Submit a pull request — all contributions are welcome!
 
 ---
 
-## 📄 License
+## 📜 License
 
-[MIT License](LICENSE)
+This project is open-source under the [MIT License](LICENSE).
 
 ---
 
-Made with 💻 + ☕ by [Chaitanya](https://github.com/Chaitanya8639)
+> Made with 💻 + ☕ by [Chaitanya](https://github.com/Chaitanya8639)  
+> Boost your focus. Automate your routine. 📆✨
