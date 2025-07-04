@@ -13,6 +13,5 @@ The setupScheduleSync() function is your one-click setup to automate everything.
 5. 📃 Ensures the Weekly Events sheet exists for attendance logging
 6. 🔐 Requests the necessary permissions for Calendar and Sheet access
 
-You only need to run it once — it automates everything afterward.
-You can find it in [Code.gs]()
+### You only need to run it once — it automates everything afterward.
 ---
