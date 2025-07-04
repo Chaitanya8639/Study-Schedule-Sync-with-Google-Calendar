@@ -134,7 +134,7 @@ Have ideas or feedback?
 
 ## 📜 License
 
-This project is open-source under the [MIT License](Issues/LICENSE).
+This project is open-source under the [MIT License](LICENSE).
 
 ---
 
