@@ -130,7 +130,7 @@ A new sheet named `Weekly Events` is created to track attendance from calendar r
 Have ideas or feedback?
 
 - ⭐ Star this repo to support it
-- 🐛 [Open an issue](https://github.com/Chaitanya8639/study-schedule-sync/issues)
+- 🐛 [Open an issue](Issue)
 - 🔧 Submit a pull request — all contributions are welcome!
 
 ---
