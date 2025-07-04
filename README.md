@@ -17,12 +17,9 @@ A **Google Apps Script** project that syncs your weekly study timetable from **G
 
 ---
 
-## 📁 Folder Structure
-
-study-schedule-sync/
-├── Code.gs # Main Google Apps Script code
-├── appsscript.json # Project manifest file
-└── README.md # Project documentation (this file)
+## 📁 Files Included
+- [Code.gs]()  # Main Google Apps Script code
+- [appsscript.json]() # Project manifest file
 
 ---
 
