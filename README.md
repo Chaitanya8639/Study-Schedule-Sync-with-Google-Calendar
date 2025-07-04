@@ -37,8 +37,7 @@ The project uses a sheet named `Week Schedule` with the following layout:
 | J      | Saturday Activities                  |
 | K      | Sunday Activities                    |
 
-![image](https://github.com/user-attachments/assets/138c4ed1-ef17-46db-b3c0-0375944cc239)
-
+ - Refer to this Schedule [Sample Schedule.png]()
 ---
 
 ## ⚙️ Setup Instructions
