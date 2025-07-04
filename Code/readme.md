@@ -1,7 +1,7 @@
 ---
 
 ## 🚀 What Does setupScheduleSync() Do?
-The setupScheduleSync() function is your one-click setup to automate everything. It performs the following operations to prepare the entire system:
+The setupScheduleSync() function is your one-click setup to automate everything. It performs the following operations to prepare the entire system -
 
 ✅ Creates a custom menu in your Google Sheet titled Schedule Sync, giving you quick access to sync features.
 
