@@ -1,22 +1,18 @@
 ---
 
 ## 🚀 What Does setupScheduleSync() Do?
-The setupScheduleSync() function is your one-click setup to automate everything. It performs the following operations to prepare the entire system -
 
-✅ Creates a custom menu in your Google Sheet titled Schedule Sync, giving you quick access to sync features.
+The setupScheduleSync() function is your one-click setup to automate everything. It performs the following actions
 
-🗓 Checks for the calendar named Weekly Study Schedule. If it doesn’t exist, it creates one for you.
+1. ✅ **Creates a custom menu** in your Google Sheet (Schedule Sync)
+2. 🗓 **Ensures your Calendar exists** (creates it if missing)
+3. 🔄 **Sets up time-based triggers:**
+   - createWeeklyEvents() runs every **Monday at 8:00 AM**
+   - updateAttendanceFromCalendar() runs daily at **6:00 PM**
+4. ✏️ **Sets an installable trigger** that listens for sheet edits and calls onEditSchedule(e)
+5. 📃 Ensures the Weekly Events sheet exists for attendance logging
+6. 🔐 Requests the necessary permissions for Calendar and Sheet access
 
-🔄 Installs time-based triggers:
-
-createWeeklyEvents() — runs every Monday at 8:00 AM to generate weekly events.
-
-updateAttendanceFromCalendar() — runs daily at 6:00 PM to fetch and record calendar RSVP responses.
-
-✏️ Installs an on-edit trigger (onEditSchedule(e)) that listens for changes in the Week Schedule sheet and updates the corresponding calendar event in real time.
-
-📃 Creates the Weekly Events sheet (if missing) to log attendance details like event status and response time.
-
-🔐 Requests permissions for Google Sheets and Google Calendar so the script can access and modify them.
-You can find it in [code.gs]().
+You only need to run it once — it automates everything afterward.
+You can find it in [Code.gs]()
 ---
